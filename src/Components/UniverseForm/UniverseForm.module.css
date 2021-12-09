@@ -1,0 +1,6 @@
+.MainDiv {
+  /* display: flex;
+  flex-direction: column; */
+  padding: 10px;
+  outline: 1px solid salmon;
+}
