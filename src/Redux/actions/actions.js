@@ -1,7 +1,13 @@
-// import { createAction } from "@reduxjs/toolkit"
+import { createAction } from "@reduxjs/toolkit"
 
-// const lala = createAction('lala');
+const addInputFromUniverseForm = createAction("addInputInUniverseForm")
 
-// export default {
-//   lala
+export default {
+  addInputFromUniverseForm,
+}
+
+// {
+//   "rules": {
+//     "allowObject": true
+//   }
 // }
