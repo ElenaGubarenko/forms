@@ -5,9 +5,3 @@ const addInputFromUniverseForm = createAction("addInputInUniverseForm")
 export default {
   addInputFromUniverseForm,
 }
-
-// {
-//   "rules": {
-//     "allowObject": true
-//   }
-// }
