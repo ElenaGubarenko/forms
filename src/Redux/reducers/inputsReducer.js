@@ -5,7 +5,11 @@ import actions from "../actions/actions"
 const inputs = []
 
 const inputsReducer = createReducer(inputs, {
-  [actions.addInputFromUniverseForm]: (state, action) => [...state, action.payload],
+  [actions.addInputFromUniverseForm]: (state, action) => {
+    return [...state, action.payload] 
+  }
 })
+
+
 
 export default inputsReducer

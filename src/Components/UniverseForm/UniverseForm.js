@@ -14,11 +14,12 @@ export default function UniverseForm() {
     // console.log(e.target.value)
   }
 
-  console.log(arrOfValues)
+  // console.log(arrOfValues)
 
   const [inputNumber, setInputNumber] = useState(1)
-  const [inputs, setInputs] = useState([<input onChange={handleEvent} type="text" id="0" key="0" placeholder="Имя будущей карточки"></input>])
+  // const [inputs, setInputs] = useState([<input onChange={handleEvent} type="text" id="0" key="0" placeholder="Имя будущей карточки"></input>])
   const dispatch = useDispatch()
+  const allInputs = useSelector(selectors.getAllInputs)
 
   const assignNumberToInput = () => {
     setInputNumber((prevState) => {
@@ -26,12 +27,15 @@ export default function UniverseForm() {
     })
   }
 
-
   const addNewInputInState = () => {
-    setInputs((prevState) => {
-      return [...prevState, <input onChange={handleEvent} type="text" id={inputNumber} key={inputNumber} placeholder="Имя поля"></input>]
-    })
+    // setInputs((prevState) => [...prevState, <input  type="text" id={inputNumber} key={inputNumber} placeholder="Имя поля"></input>]
+    // )
+    // dispatch(operations.addInput(inputs))
+      dispatch(operations.addInput( <input  type="text" id={inputNumber} key={inputNumber} placeholder="Имя поля"></input>))
   }
+
+  // console.log(inputs)
+  // console.log(allInputs)
 
   const createInput = () => {
     assignNumberToInput()
@@ -40,14 +44,14 @@ export default function UniverseForm() {
 
   const addNewCard = e => {
         e.preventDefault();
-    dispatch(operations.getAllInputs(inputs))
+    dispatch(operations.addCard(allInputs))
   }
 
   return (
     <div className={styles.MainDiv}>
       <p>Укажите поля будущей формы:</p>
       <form onSubmit={addNewCard}> 
-        {inputs.map((input) => input)}
+        {allInputs.map((input) => input)}
         <button onClick={createInput} type="button">
           Добавить поле
         </button>

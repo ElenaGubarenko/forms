@@ -1,9 +1,14 @@
 import actions from "../actions/actions"
 
-const getAllInputs = (inputs) => (dispatch) => {
-  dispatch(actions.addInputFromUniverseForm(inputs))
+const addInput = (input) => (dispatch) => {
+   dispatch(actions.addInputFromUniverseForm(input))
+}
+
+const addCard = (allInputs) => (dispatch) => {
+  dispatch(actions.addNewCard(allInputs))
 }
 
 export default {
-  getAllInputs,
+  addInput,
+  addCard
 }
