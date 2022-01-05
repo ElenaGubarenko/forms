@@ -6,10 +6,8 @@ const inputs = []
 
 const inputsReducer = createReducer(inputs, {
   [actions.addInputFromUniverseForm]: (state, action) => {
-    return [...state, action.payload] 
+      return [...state, action.payload] 
   }
 })
-
-
 
 export default inputsReducer

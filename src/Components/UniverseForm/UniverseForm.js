@@ -1,25 +1,23 @@
 import styles from "./UniverseForm.module.css"
 import { useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import {  useDispatch, useSelector } from "react-redux"
 import operations from "../../Redux/operations/operations"
 import selectors from "../../Redux/selectors/selectors"
+import Input from '../Input'
 
 export default function UniverseForm() {
-  const [arrOfValues, setArrOfValues] = useState([])
-  
-  const handleEvent = e => {
-    setArrOfValues((prevState) => {
-      return [...prevState, e.target.value]
-    })
-    // console.log(e.target.value)
-  }
-
-  // console.log(arrOfValues)
-
-  const [inputNumber, setInputNumber] = useState(1)
-  // const [inputs, setInputs] = useState([<input onChange={handleEvent} type="text" id="0" key="0" placeholder="Имя будущей карточки"></input>])
+ const [inputNumber, setInputNumber] = useState(1)
+ const [cardName, setCardName] = useState('')
+//  const [inputValue, setInputValue]=useState('')
+//  const [arrOfValues, setArrOfValues] = useState([])
   const dispatch = useDispatch()
-  const allInputs = useSelector(selectors.getAllInputs)
+  // const [allInputsValues, setAllIputsValues] = useState([])
+  const [inputComponents, setInputComponents] = useState([])
+  const sortedValues = useSelector(selectors.sortInputsValuesByIdAscending)
+
+  const handleCardName = e => {
+setCardName(e.target.value)
+  }
 
   const assignNumberToInput = () => {
     setInputNumber((prevState) => {
@@ -27,38 +25,37 @@ export default function UniverseForm() {
     })
   }
 
-  const addNewInputInState = () => {
-    // setInputs((prevState) => [...prevState, <input  type="text" id={inputNumber} key={inputNumber} placeholder="Имя поля"></input>]
-    // )
-    // dispatch(operations.addInput(inputs))
-      dispatch(operations.addInput( <input  type="text" id={inputNumber} key={inputNumber} placeholder="Имя поля"></input>))
-  }
-
-  // console.log(inputs)
-  // console.log(allInputs)
-
   const createInput = () => {
+        // console.log(arrOfValues)
     assignNumberToInput()
-    addNewInputInState()
+      setInputComponents([...inputComponents, <Input id={inputNumber} > </Input>])
+  }
+  
+  const addNewCard = e => {
+    e.preventDefault();
+    const newCardWithName = [
+cardName, inputComponents
+    ]
+    dispatch(operations.addCard(newCardWithName))
+    setCardName('')
   }
 
-  const addNewCard = e => {
-        e.preventDefault();
-    dispatch(operations.addCard(allInputs))
-  }
+console.log(sortedValues)
 
   return (
     <div className={styles.MainDiv}>
       <p>Укажите поля будущей формы:</p>
-      <form onSubmit={addNewCard}> 
-        {allInputs.map((input) => input)}
-        <button onClick={createInput} type="button">
+      <form > 
+        <input onChange={handleCardName} value={cardName} type="text" id="0" key="0" placeholder="Имя будущей карточки"></input>
+       {inputComponents}
+               <button onClick={createInput} type="button">
           Добавить поле
         </button>
-        <button type="submit">
+        <button onClick={addNewCard} type="button">
           Создать карточку
         </button>
       </form>
     </div>
   )
 }
+

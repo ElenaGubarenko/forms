@@ -6,9 +6,14 @@ const addInput = (input) => (dispatch) => {
 
 const addCard = (allInputs) => (dispatch) => {
   dispatch(actions.addNewCard(allInputs))
+} 
+
+const addValue = (value) => (dispatch) => {
+  dispatch(actions.addValue(value))
 }
 
 export default {
   addInput,
-  addCard
+  addCard,
+  addValue
 }
