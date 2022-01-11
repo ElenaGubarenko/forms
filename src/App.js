@@ -3,6 +3,7 @@ import HeaderNavigation from "./Components/HeaderNavigation"
 import UniverseForm from "./Components/UniverseForm"
 import CardsList from "./Components/CardsList"
 import CardListAndUniverseFormContainer from "./Components/CardListAndUniverseFormContainer"
+import FormsList from './Components/FormsList'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <CardListAndUniverseFormContainer>
         <UniverseForm></UniverseForm>
         <CardsList></CardsList>
+        <FormsList></FormsList>
       </CardListAndUniverseFormContainer>
     </>
   )

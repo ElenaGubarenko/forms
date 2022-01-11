@@ -1,14 +1,50 @@
 import styles from "./CardsList.module.css"
+import { useState , useEffect} from "react"
+import { useSelector, useDispatch } from "react-redux"
+import operations from "../../Redux/operations/operations"
+import selectors from "../../Redux/selectors/selectors"
+import FilledFormsList from '../FilledFormsList'
 
 export default function CardsList() {
-  return (
+  const cards = useSelector(selectors.cards)
+      const dispatch = useDispatch()
+
+   const removeCard = (cardName) => {
+    dispatch(operations.removeCard(cardName))
+  }
+
+// console.log(cards)
+
+  return    (
     <div className={styles.MainDiv}>
-      {" "}
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid veniam consequatur eius animi, voluptatibus eveniet distinctio! Voluptas
-        aperiam numquam facilis odit omnis dicta voluptate tempore sequi? Dolorum modi rem quo necessitatibus quae, non tempore, ab aspernatur sed
-        provident laudantium animi libero. Sed at molestiae consequuntur praesentium nesciunt asperiores amet illum!
-      </p>
-    </div>
+      <FilledFormsList></FilledFormsList>
+      {
+        cards.map(card => 
+          <div>
+            <p>{card[2]}</p>
+            {card[3].map(element =>
+              <ul>
+                <li>{element.value}</li>
+              </ul>
+            )}
+             <button type="button" onClick={() => removeCard(card[0])} >remove</button> 
+          </div>
+          
+          )
+      }
+      {/* {
+        cards.map(element =>
+          <div>
+            <p>Card name: {element[0]}</p>
+          <ul>
+              {element[1].map(item => 
+               <li key={item.id}>{item.value}</li>)}
+              <button type="button" onClick={() => removeCard(element[0])} >remove</button> 
+            </ul>
+          </div>
+        )
+      } */}
+            </div>
+     
   )
 }

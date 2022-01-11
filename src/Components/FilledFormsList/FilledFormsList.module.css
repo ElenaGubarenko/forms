@@ -1,5 +1,5 @@
 .MainDiv {
   width: calc(100% / 2);
   padding: 10px;
-  outline: 1px solid salmon;
+  /* outline: 1px solid salmon; */
 }

@@ -6,9 +6,16 @@ const values = []
 
 const valuesReducer = createReducer(values, {
   [actions.addValue]: (state, action) => {
-        return [...state, action.payload] 
+
+    const filtredState =  state.filter( (element) => {
+   return element.id !== action.payload.id
+ })
+   return [...filtredState, action.payload]
+
   }
+
 })
 
-
 export default valuesReducer
+
+

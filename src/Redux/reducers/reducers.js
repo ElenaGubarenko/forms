@@ -1,10 +1,14 @@
-import inputsReducer from "./inputsReducer"
 import cardsReducer from './cardsReducer'
 import valuesReducer from './valuesReducer'
+import formsReducer from './formsReducer'
+import valuesInFormReducer from './valuesInFormReducer'
+import filledFormsReducer from './filledFormsReducer'
 import { combineReducers } from "redux"
 
 export default combineReducers({
-  inputsReducer,
   cardsReducer,
-  valuesReducer
+  valuesReducer,
+  formsReducer,
+  valuesInFormReducer,
+  filledFormsReducer
 })
