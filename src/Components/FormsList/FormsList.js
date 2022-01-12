@@ -11,6 +11,7 @@ export default function FormsList() {
     const dispatch = useDispatch()
   const sortedFormValues = useSelector(selectors.sortFormsValuesByIdAscending)
   const inputId = uniqid()
+  const [disabled, setDisabled] = useState(false)
   // const [formName, setFormName] = useState('')
 
   const addNewFilledForm = () => {
@@ -20,60 +21,35 @@ export default function FormsList() {
     dispatch(operations.addFilledForm(newFilledForm))
     dispatch(operations.cleanValuesInFormReducer())
   }
-  
+
     const removeForm = (formId) => {
     dispatch(operations.removeForm(formId))
   }
 
-// console.log(formName.map(element=>))
-
-  return    (
-    <div className={styles.MainDiv}>
+  return (
+       <div className={styles.MainDiv}>
       {
         forms.map(form =>
-          <div>
-            {/* {()=>setFormName(form[2])} */}
-            <p>{form[2]}</p>
+          <div className={styles.FillTheFormDiv}>
+            {
+              form[2] ?  <p className={styles.Text}>Form name: {form[2]}</p> : null
+            }
+             <ul className={styles.FormList}>
             {form[3].map(element =>
-              <ul>
-                <li>{element.value}
-                  <InputInForm formName={form[2]}
+            
+                <li className={styles.FormListItem}><p className={styles.FieldName}>{element.value}:  </p>           <InputInForm formName={form[2]}
                     data={element.value}
-                    // number={form[2]}
-                    id={element.id}></InputInForm></li>
-              </ul>
-            )}
-            <button onClick={addNewFilledForm} type="button">accept form</button>
-            <button onClick={()=>removeForm(form[0])} type="button">remove form</button>
+                    id={element.id}></InputInForm>
+                </li>
+             
+              )} </ul>
+            <div className={styles.ButtonsDiv}>
+            <button disabled={sortedFormValues.length===0 ? !disabled: disabled
+            } className={styles.AcceptForm} onClick={addNewFilledForm} type="button">Accept form</button>
+            <button className={styles.RemoveForm} onClick={()=>removeForm(form[0])} type="button">Remove form</button></div>
           </div>
           )
       }
-
-
-
-      {/* {forms!=='' ? 
-          forms.map(element =>
-            <div>
-            {
-          element[1] !=='' ?
-         <div> <p>Form name: {element[0]}</p>
-            <ul>
-              {element[1].map(item =>
-            <li key={element[1].indexOf(item)}>
-                  <p>{item.value}</p>
-                  <InputInForm formName={element[0]} data={item.value} id={element[1].indexOf(item)}></InputInForm>
-                  </li>
-                )}
-            </ul>
-                    <button onClick={addNewFilledForm} type="button">accept form</button>
-                    <button onClick={()=>removeForm(element[0])} type="button">remove form</button>
-                  </div>
-                  : null}
-            </div>
-       
-        )
-        : null */}
-      {/* } */}
             </div>
      
   )

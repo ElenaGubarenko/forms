@@ -1,0 +1,35 @@
+.InputComponentDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.LittleButton {
+  min-width: 80px;
+}
+
+.OkButton {
+  background-color: #505160;
+  margin-right: 5px;
+}
+
+.CorrectButton {
+  background-color: hsl(236, 9%, 35%, 0.525);
+}
+
+.ButtonDiv {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+.LittleButton:hover {
+  background-color: #78a5a3;
+}
+
+.disabledAddValue {
+  background-color: hsl(236, 9%, 35%, 0.525);
+}
+
+.abledCorrect {
+  background-color: #505160;
+}

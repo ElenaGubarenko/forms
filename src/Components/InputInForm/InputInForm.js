@@ -33,7 +33,16 @@ const InputInForm = ({ id, data, formName }) => {
     setDisabledInput(false)
   }
 
-  return <> <input disabled={disabledInput} onChange={handleInput} value={inputInFormValue} type="text" placeholder={data}></input> <button disabled={disabledAddValue} type="button" onClick={addFormInputValue}>ok</button> <button disabled={abledCorrect} type="button" onClick={correctValue}>correct</button> </>
+  return <>
+    <div className={styles.InputComponentDiv}>
+    <input disabled={disabledInput} onChange={handleInput} value={inputInFormValue} type="text" placeholder={data}></input>
+      <div className={styles.ButtonDiv}>
+        
+    <button className={`${styles.LittleButton} ${styles.OkButton} ${disabledAddValue? styles.disabledAddValue :styles.OkButton } `} disabled={disabledAddValue} type="button" onClick={addFormInputValue}>Ok</button>
+    <button className={`${styles.LittleButton} ${styles.CorrectButton}  ${!abledCorrect? styles.abledCorrect :styles.CorrectButton }`} disabled={abledCorrect} type="button" onClick={correctValue}>Correct</button></div> </div></>
 }
  
 export default InputInForm
+
+//  <button className={`${styles.LittleButton} ${styles.OkButton} ${disabledAddValue? styles.disabledAddValue :styles.OkButton } `} disabled={disabledAddValue} type="button" onClick={addValue}>ok</button>
+//     <button className={`${styles.LittleButton} ${styles.CorrectButton}  ${!abledCorrect? styles.abledCorrect :styles.CorrectButton }`} disabled={abledCorrect} type="button" onClick={correctValue}>correct</button> </div></>

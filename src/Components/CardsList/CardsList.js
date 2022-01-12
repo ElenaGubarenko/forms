@@ -7,44 +7,37 @@ import FilledFormsList from '../FilledFormsList'
 
 export default function CardsList() {
   const cards = useSelector(selectors.cards)
-      const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  const filledForms = useSelector(selectors.filledForms)
 
    const removeCard = (cardName) => {
     dispatch(operations.removeCard(cardName))
   }
 
-// console.log(cards)
-
-  return    (
+  return ( 
+    <>
+   
     <div className={styles.MainDiv}>
-      <FilledFormsList></FilledFormsList>
+       <FilledFormsList></FilledFormsList> 
       {
         cards.map(card => 
-          <div>
-            <p>{card[2]}</p>
+          <div className={styles.CardDiv}>
+            {
+              card[2] ? <p className={styles.Text}>Card name: {card[2]}</p> : null
+              
+           }       <ul className={styles.CardValuesList}>
             {card[3].map(element =>
-              <ul>
-                <li>{element.value}</li>
-              </ul>
-            )}
-             <button type="button" onClick={() => removeCard(card[0])} >remove</button> 
+        
+                <li className={styles.CardValue}>{element.value}</li>
+            
+            )}  </ul>
+             <button className={styles.RemoveButton} type="button" onClick={() => removeCard(card[0])} >Remove</button> 
           </div>
-          
+        
           )
       }
-      {/* {
-        cards.map(element =>
-          <div>
-            <p>Card name: {element[0]}</p>
-          <ul>
-              {element[1].map(item => 
-               <li key={item.id}>{item.value}</li>)}
-              <button type="button" onClick={() => removeCard(element[0])} >remove</button> 
-            </ul>
-          </div>
-        )
-      } */}
+   
             </div>
-     
+      </>
   )
 }

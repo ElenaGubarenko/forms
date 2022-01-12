@@ -11,8 +11,10 @@ const valuesReducer = createReducer(values, {
    return element.id !== action.payload.id
  })
    return [...filtredState, action.payload]
-
-  }
+  },
+  [actions.cleanValuesReducer]: (state, action) => {
+     return []
+   }
 
 })
 

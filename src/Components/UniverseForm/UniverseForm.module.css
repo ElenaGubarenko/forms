@@ -1,7 +1,43 @@
 .MainDiv {
-  /* display: flex;
-  flex-direction: column; */
+  text-align: center;
   width: calc(100% / 2);
   padding: 10px;
-  outline: 1px solid salmon;
+  outline: 1px solid #78a5a3;
+  border-radius: 5px;
 }
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ButtonsDiv {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.CreateCard {
+  background-color: #68829e;
+}
+
+.CreateForm {
+  background-color: #505160;
+}
+
+.Text {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* 
+#68829E
+Водопад (cards)
+
+#505160
+грозовая туча (forms) */

@@ -37,6 +37,8 @@ cardName, sortedValues
     ]
     dispatch(operations.addCard(newCardWithName))
     setCardName('')
+    setInputComponents([])
+    dispatch(operations.cleanValuesReducer())
   }
 
   const addNewForm = e => {
@@ -48,23 +50,27 @@ cardName, sortedValues
     ]
     dispatch(operations.addNewForm(newFormWithName))
     setCardName('')
+    setInputComponents([])
+     dispatch(operations.cleanValuesReducer())
   }
 
   return (
     <div className={styles.MainDiv}>
-      <p>Укажите поля будущей карточки или формы:</p>
-      <form > 
-        <input onChange={handleCardName} value={cardName} type="text" id="0" key="0" placeholder="Имя будущей карточки или формы"></input>
-       {inputComponents}
+      <p className={styles.Text}>Please, indicate the fields of future card or form:</p>
+      <form className={styles.Form}> 
+        <input onChange={handleCardName} value={cardName} type="text" id="0" key="0" placeholder="Card or Form name"></input>
+        {inputComponents}
+        <div className={styles.ButtonsDiv}>
                <button onClick={createInput} type="button">
-          Добавить поле
+      Add line
         </button>
-        <button onClick={addNewCard} type="button">
-          Создать карточку
+        <button className={styles.CreateCard} onClick={addNewCard} type="button">
+         Create card
         </button>
-           <button onClick={addNewForm} type="button">
-          Создать форму
-        </button>
+           <button className={styles.CreateForm} onClick={addNewForm} type="button">
+       Create form
+          </button>
+        </div>
       </form>
     </div>
   )

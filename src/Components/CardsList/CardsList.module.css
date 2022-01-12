@@ -1,5 +1,53 @@
 .MainDiv {
-  width: calc(100% / 2);
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  align-content: flex-start;
+  /* justify-content: space-between; */
+  /* width: calc(100% / 2); */
   padding: 10px;
-  outline: 1px solid salmon;
+  outline: 1px solid #78a5a3;
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.CardDiv {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  outline: 1px solid #68829e;
+  border-radius: 5px;
+  background-color: hsla(213, 22%, 51%, 0.205);
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.RemoveButton {
+  min-width: 80px;
+  background-color: #68829e;
+}
+
+.RemoveButton:hover {
+  background-color: #ce5a57;
+}
+
+.CardValuesList {
+  padding: 0;
+  margin-top: 0;
+}
+
+.CardValue {
+  padding: 0;
+  margin-bottom: 2px;
+}
+
+.Text {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
 }

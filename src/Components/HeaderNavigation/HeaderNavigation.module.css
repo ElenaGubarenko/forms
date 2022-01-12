@@ -1,4 +1,15 @@
 .MainDiv {
   padding: 10px;
-  outline: 1px solid salmon;
+  outline: 1px solid #78a5a3;
+  border-radius: 5px;
+}
+
+.Text {
+  text-align: center;
+  font-size: 20px;
+  color: #2d4262;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
 }

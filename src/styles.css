@@ -1,0 +1,105 @@
+button {
+  min-width: 150px;
+  min-height: auto;
+  padding: 5px;
+  /* font-size: 10px; */
+  /* font-weight: bold; */
+  border: none;
+  border-radius: 5px;
+  background-color: #2d4262;
+  color: white;
+  transition-property: color, background-color;
+  transition-duration: 500ms;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+button:hover {
+  background-color: #78a5a3;
+  color: white;
+  border: none;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+input {
+  /* border-radius: 2px; */
+  border-bottom: 1 px solid #78a5a3;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  padding-top: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+}
+
+::placeholder {
+  color: #78a5a3;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+input:disabled {
+  background-color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:disabled,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill {
+  -webkit-text-fill-color: none;
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+ul {
+  list-style: none;
+}
+
+/*
+Румянец
+#D09683
+
+Скалисто-коричневый
+#73605B
+
+Индиго
+#2D4262
+
+Темно-фиолетовый
+#363237 
+
+#444C5C
+Увядший синий
+
+Теплый
+#E1B16A
+
+#78A5A3
+Окенаский бриз hover
+
+#CE5A57
+Пунш
+
+#598234
+луг
+
+#aebd38
+мох
+
+#68829E
+Водопад (cards)
+
+#505160
+грозовая туча (forms)
+
+*/

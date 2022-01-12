@@ -1,0 +1,29 @@
+.LittleButton {
+  min-width: 80px;
+}
+
+.OkButton {
+  background-color: #598234;
+  margin-right: 5px;
+}
+
+.CorrectButton {
+  background-color: hsl(67, 54%, 48%, 0.525);
+}
+
+.ButtonDiv {
+  display: flex;
+}
+
+.LittleButton:hover {
+  background-color: #aebd38;
+}
+
+.disabledAddValue {
+  background-color: hsla(92, 43%, 36%, 0.525);
+}
+
+.abledCorrect {
+  background-color: #598234;
+  /* background-color: hsl(67, 54%, 48%, 0.525); */
+}

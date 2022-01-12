@@ -1,5 +1,69 @@
 .MainDiv {
   width: calc(100% / 2);
   padding: 10px;
-  outline: 1px solid salmon;
+  outline: 1px solid #78a5a3;
+  border-radius: 5px;
+}
+
+.FillTheFormDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.AcceptForm {
+  background-color: #505160;
+}
+
+.RemoveForm {
+  background-color: #505160;
+}
+
+.AcceptForm:disabled {
+  background-color: hsl(236, 9%, 35%, 0.525);
+}
+
+.RemoveForm:hover {
+  background-color: #ce5a57;
+}
+
+.FormList {
+  padding: 0;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.FormListItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+
+  /* display: flex;
+  justify-content: flex-start;
+  align-content: space-between; */
+  /* align-items: baseline;
+  justify-content: space-between; */
+}
+
+.FieldName {
+  padding-left: 7px;
+  margin: 0;
+}
+
+.ButtonsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Text {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
 }

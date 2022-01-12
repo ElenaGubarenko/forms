@@ -20,6 +20,8 @@ const removeCard = createAction('removeCard')
 
 const cleanValuesInFormReducer = createAction('cleanValuesInFormReducer')
 
+const cleanValuesReducer = createAction('cleanValuesReducer')
+
 export default {
   addInputFromUniverseForm,
   addNewCard,
@@ -30,5 +32,6 @@ export default {
   removeFormFromList,
   removeForm,
   removeCard,
-  cleanValuesInFormReducer
+  cleanValuesInFormReducer,
+  cleanValuesReducer
 }

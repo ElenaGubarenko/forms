@@ -9,7 +9,6 @@ const Input = ({id}) => {
   const [disabledAddValue, setDisabledAddValue] = useState(false)
     const [disabledInput, setDisabledInput] = useState(false)
   const [abledCorrect, setAbledCorrect] = useState(true)
-    // const sortedValues = useSelector(selectors.sortInputsValuesByIdAscending)
   const dispatch = useDispatch()
 
     const handleInput = e => {
@@ -34,7 +33,10 @@ const Input = ({id}) => {
     setDisabledInput(false)
   }
 
-  return <> <input disabled={disabledInput} onChange={handleInput} value={inputValue} type="text" placeholder="Имя поля"></input> <button disabled={disabledAddValue} type="button" onClick={addValue}>ok</button> <button disabled={abledCorrect} type="button" onClick={correctValue}>correct</button> </>
+  return <> <input disabled={disabledInput} onChange={handleInput} value={inputValue} type="text" placeholder="Line name"></input>
+    <div className={styles.ButtonDiv}>
+    <button className={`${styles.LittleButton} ${styles.OkButton} ${disabledAddValue? styles.disabledAddValue :styles.OkButton } `} disabled={disabledAddValue} type="button" onClick={addValue}>Ok</button>
+    <button className={`${styles.LittleButton} ${styles.CorrectButton}  ${!abledCorrect? styles.abledCorrect :styles.CorrectButton }`} disabled={abledCorrect} type="button" onClick={correctValue}>Correct</button> </div></>
 }
  
 export default Input

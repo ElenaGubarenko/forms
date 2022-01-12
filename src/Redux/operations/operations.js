@@ -40,6 +40,10 @@ const cleanValuesInFormReducer = () => (dispatch) => {
   dispatch(actions.cleanValuesInFormReducer())
 }
 
+const cleanValuesReducer = () => (dispatch) => {
+  dispatch(actions.cleanValuesReducer())
+}
+
 export default {
   addInput,
   addCard,
@@ -50,5 +54,6 @@ export default {
   removeFormFromList,
   removeForm,
   removeCard,
-  cleanValuesInFormReducer
+  cleanValuesInFormReducer,
+  cleanValuesReducer
 }
